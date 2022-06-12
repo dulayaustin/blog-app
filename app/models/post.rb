@@ -1,4 +1,4 @@
-class Blog < ApplicationRecord
+class Post < ApplicationRecord
 
   enum status: {
     draft: 0,

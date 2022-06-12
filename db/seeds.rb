@@ -6,8 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-Blog.create(
+Post.create(
   [
     {
       title: "Your Step-by-Step Guide to Choosing Where to Get Care",
