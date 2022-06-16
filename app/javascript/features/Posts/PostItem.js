@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 import DeletePost from './DeletePost'
 
-const Post = (props) => {
+const PostItem = (props) => {
   return (
     <>
       <Card>
@@ -24,4 +24,4 @@ const Post = (props) => {
   )
 }
 
-export default Post
+export default PostItem

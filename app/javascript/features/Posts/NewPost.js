@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import PostForm from '../Forms/PostForm'
+import PostForm from './PostForm'
 import axios from 'axios'
 
 const NewPost = () => {

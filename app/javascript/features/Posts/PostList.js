@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Post from './Post'
+import PostItem from './PostItem'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
-const Posts = () => {
+const PostList = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Posts = () => {
     return (
       <Row key={post.id} className="mb-3">
         <Col>
-          <Post
+          <PostItem
             id={post.id}
             attributes={post.attributes}
           />
@@ -41,4 +41,4 @@ const Posts = () => {
   )
 }
 
-export default Posts
+export default PostList
