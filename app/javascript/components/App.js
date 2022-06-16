@@ -4,7 +4,6 @@ import Navigation from './Navigation/Navigation'
 import Posts from './Posts/Posts'
 import Post from './Post/Post'
 import NewPost from './NewPost/NewPost'
-// import UpdatedNewPost from './UpdatedNewPost'
 import EditPost from './EditPost/EditPost'
 
 const App = () => {
