@@ -1,16 +1,26 @@
 import React from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
-import { Button, Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { Card } from 'react-bootstrap'
+import DeletePost from './DeletePost'
 
 const Post = (props) => {
   return (
-    <Card>
-      <Card.Body>
-        <Card.Title>{props.attributes.title}</Card.Title>
-        <Card.Text>{props.attributes.content}</Card.Text>
-        <Button href={`/posts/${props.id}`}>View</Button>
-      </Card.Body>
-    </Card>
+    <>
+      <Card>
+        <Card.Body>
+          <div className="float-end">
+            <Link to={`/posts/edit/${props.id}`} className="px-2">Edit</Link>
+            <DeletePost
+              id={[props.id]}
+            />
+          </div>
+
+          <Card.Title>{props.attributes.title}</Card.Title>
+          <Card.Text>{props.attributes.content}</Card.Text>
+          <Link to={`/posts/${props.id}`}>View</Link>
+        </Card.Body>
+      </Card>
+    </>
   )
 }
 
