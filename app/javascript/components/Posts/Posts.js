@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Post from './Post'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 
 const Posts = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    axios.get('/api/v1/posts.json')
-    .then( resp => {
-      setPosts(resp.data.data)
-    })
+    axios.get("/api/v1/posts")
+    .then( resp => setPosts(resp.data.data) )
     .catch( resp => console.log(resp) )
-  }, [posts.length])
+  }, [])
 
   const grid = posts.map( post => {
     return (
-      <Row key={post.id}>
+      <Row key={post.id} className="mb-3">
         <Col>
           <Post
             id={post.id}
@@ -30,7 +28,9 @@ const Posts = () => {
   return (
     <>
       <Container>
-        <h1>Posts</h1>
+        <div className="text-end" style={{margin: "10px"}}>
+          <Button href="posts/new" variant="primary">Create</Button>
+        </div>
       </Container>
 
       <Container>
