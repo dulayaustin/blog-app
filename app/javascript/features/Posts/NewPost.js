@@ -20,7 +20,7 @@ const NewPost = () => {
 
     axios.post("/api/v1/posts", { post })
     .then( resp => {
-      window.location = "/"
+      window.location = `/posts/${resp.data.data.id}`
     })
     .catch( resp => console.log(resp) )
   }

@@ -3,22 +3,19 @@ import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
 const Navigation = () => {
   return (
-    <Navbar bg="light" expand="lg" className="mb-3">
-      <Container>
-        <Navbar.Brand href="/">Blog App</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
+    <Navbar expand="lg" id="mainNav">
+      <Container className="px-4 px-lg-5">
+        <Navbar.Brand href="/">Blogeek</Navbar.Brand>
+        <Navbar.Toggle type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i className="fas fa-bars" />
+        </Navbar.Toggle>
+        <Navbar.Collapse id="navbarResponsive">
+          <ul className="navbar-nav ms-auto py-4 py-lg-0">
+            <li className="nav-item">
+            <Nav.Link className="px-lg-3 py-3 py-lg-4" href="/">Home</Nav.Link>
+            </li>
+          </ul>
         </Navbar.Collapse>
       </Container>
     </Navbar>

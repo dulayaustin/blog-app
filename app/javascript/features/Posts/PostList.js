@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import PostItem from './PostItem'
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Container, Row, Button } from 'react-bootstrap'
 
 const PostList = () => {
   const [posts, setPosts] = useState([])
@@ -14,26 +14,28 @@ const PostList = () => {
 
   const grid = posts.map( post => {
     return (
-      <Row key={post.id} className="mb-3">
-        <Col>
+      <Row key={post.id} className="gx-4 gx-lg-5 justify-content-center">
+        <div className="col-md-10 col-lg-8 col-xl-7">
           <PostItem
             id={post.id}
             attributes={post.attributes}
           />
-        </Col>
+        </div>
       </Row>
     )
   })
 
   return (
     <>
-      <Container>
-        <div className="text-end" style={{margin: "10px"}}>
-          <Button href="posts/new" variant="primary">Create</Button>
+      <Container className="px-4 px-lg-5">
+        <div className="text-end">
+          <Button href="posts/new" variant="secondary">
+            <i className="fa fa-plus me-1"></i>
+            Post
+          </Button>
         </div>
       </Container>
-
-      <Container>
+      <Container className="px-4 px-lg-5">
         {grid}
       </Container>
     </>
