@@ -29,7 +29,7 @@ const EditPost = () => {
 
     axios.put(`/api/v1/posts/${params.id}`, { post })
     .then( resp => {
-      window.location = "/"
+      window.location = `/posts/${params.id}`
     })
     .catch( resp => console.log(resp) )
   }

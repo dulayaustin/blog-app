@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { Container } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 
 const Post = () => {
   const [post, setPost] = useState({})
@@ -22,13 +22,16 @@ const Post = () => {
     <>
       { loaded &&
         <>
-          <Container>
-            <h1>{post.data.attributes.title}</h1>
-          </Container>
-
-          <Container>
-            <p>{post.data.attributes.content}</p>
-          </Container>
+          <div className="mb-4">
+            <Container className="px-4 px-lg-5">
+              <Row className="gx-4 gx-lg-5 justify-content-center">
+                <div className="col-md-10 col-lg-8 col-xl-7">
+                  <p>{post.data.attributes.content}</p>
+                </div>
+              </Row>
+            </Container>
+          </div>
+          {/* <h1>{post.data.attributes.title}</h1> */}
         </>
       }
     </>
