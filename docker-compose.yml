@@ -1,0 +1,37 @@
+version: '3.9'
+volumes:
+  bundle_cache:
+services:
+  postgres:
+    image: postgres:14.3
+    container_name: blog_app_postgres
+    volumes:
+      - ./data/db/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - PGDATA=/var/lib/postgresql/data/pgdata
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+    container_name: blog_app_mailcatcher
+  redis:
+    image: redis:7.0.2
+    container_name: blog_app_redis
+    volumes:
+      - ./data/redis:/data
+    ports:
+      - "6379:6379"
+  elasticsearch:
+    image: elasticsearch:8.2.2
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+    ports:
+      - "9200:9200"
+    volumes:
+      - ./data/elasticsearch:/usr/share/elasticsearch/data
