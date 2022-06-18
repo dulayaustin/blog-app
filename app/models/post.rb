@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  extend OrderAsSpecified
 
   enum status: {
     draft: 0,
@@ -10,6 +11,16 @@ class Post < ApplicationRecord
   validates :published_at, presence: true, if: -> { self.status_published? }
 
   before_validation :update_published_at
+
+  searchkick searchable: %i[],
+    filterable: %i[status]
+
+  def search_data
+    {
+      title: title,
+      status: status
+    }
+  end
 
   private
 
