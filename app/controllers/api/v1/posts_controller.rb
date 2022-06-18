@@ -1,5 +1,4 @@
 class Api::V1::PostsController < ApplicationController
-  before_action :set_post, only: %i[ show update destroy ]
 
   def index
     posts = Post.all
@@ -8,7 +7,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
-    render json: serialize(@post)
+    render json: serialize(post)
   end
 
   def create
@@ -22,25 +21,25 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      render json: serialize(@post)
+    if post.update(post_params)
+      render json: serialize(post)
     else
       render json: post.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    if @post.destroy
+    if post.destroy
       head :no_content
     else
-      render json: @post.errros, status: :unprocessable_entity
+      render json: post.errros, status: :unprocessable_entity
     end
   end
 
   private
 
-  def set_post
-    @post = Post.find(params[:id])
+  def post
+    @post ||= Post.find(params[:id])
   end
 
   def post_params
