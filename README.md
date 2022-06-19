@@ -1,6 +1,6 @@
 # Overview
 
-It is a simple blog app that is created on Ruby on Rails as the backend and React as the frontend.
+It is a simple blog app that was created on Ruby on Rails as the API backend and React as the frontend.
 
 # Specs
 
@@ -16,14 +16,16 @@ Clone the repository:
 https://github.com/dulayaustin/blog-app.git
 ```
 
-Bundle gems using gemset: (Optional)
+Bundle gems using gemset to be organized: (Optional)
 - Install rbenv gemset https://github.com/jf/rbenv-gemset
-- Install new ruby version: `rbenv install 3.1.2`
-- Use newly installed ruby: `rbenv local 3.1.2`
-- Initialize gemset: `rbenv gemset init`
-- Refresh rbenv configs: `rbenv rehash`
-- Activate gemset: `rbenv gemset active`
-- Then `bundle install`
+```sh
+rbenv install 3.1.2  # Install new ruby version (if you haven't already)
+rbenv local 3.1.2    # Use newly installed ruby
+rbenv gemset init    # Initialize gemset
+rbenv rehash         # Refresh rbenv configs
+rbenv gemset active  # Activate gemset
+bundle install
+```
 
 Database creation and seed data:
 ```sh
