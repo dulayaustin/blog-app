@@ -1,24 +1,49 @@
-# README
+# Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+It is a simple blog app that is created on Ruby on Rails as the backend and React as the frontend.
 
-Things you may want to cover:
+# Specs
 
-* Ruby version
+* Ruby 3.1.2
+* Rails 6.1.6
+* React 18.1.0
+* Bootstrap 5.1.3
 
-* System dependencies
+# Setup
 
-* Configuration
+Clone the repository:
+```sh
+https://github.com/dulayaustin/blog-app.git
+```
 
-* Database creation
+Bundle gems using gemset: (Optional)
+- Install rbenv gemset https://github.com/jf/rbenv-gemset
+- Install new ruby version: `rbenv install 3.1.2`
+- Use newly installed ruby: `rbenv local 3.1.2`
+- Initialize gemset: `rbenv gemset init`
+- Refresh rbenv configs: `rbenv rehash`
+- Activate gemset: `rbenv gemset active`
+- Then `bundle install`
 
-* Database initialization
+Database creation and seed data:
+```sh
+rake db:create
+rake db:migrate
+rake db:seed
+```
 
-* How to run the test suite
+Start up the containers for services such as Elasticsearch, PostgreSQL, etc using docker:
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+docker-compose up
+```
 
-* Deployment instructions
+Start the app:
+```sh
+rails s
+```
 
-* ...
+Take note that the localhost port is 9000:
+```sh
+http://localhost:9000
+```
