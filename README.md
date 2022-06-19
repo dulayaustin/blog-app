@@ -16,7 +16,7 @@ Clone the repository:
 https://github.com/dulayaustin/blog-app.git
 ```
 
-Bundle gems using gemset to be organized: (Optional)
+Bundle gems using gemset to be organized: (Optional) OR `bundle install` immediately.
 - Install rbenv gemset https://github.com/jf/rbenv-gemset
 ```sh
 rbenv install 3.1.2  # Install new ruby version (if you haven't already)
