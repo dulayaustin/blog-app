@@ -11049,9 +11049,9 @@ blockquote {
   font-weight: 800;
 }
 #mainNav .navbar-toggler {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 800;
-  padding: 0.75rem;
+  padding: 1rem;
   text-transform: uppercase;
 }
 #mainNav .navbar-nav > li.nav-item > a.nav-link {

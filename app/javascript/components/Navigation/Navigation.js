@@ -7,7 +7,6 @@ const Navigation = () => {
       <Container className="px-4 px-lg-5">
         <Navbar.Brand href="/">Blogeek</Navbar.Brand>
         <Navbar.Toggle type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
           <i className="fas fa-bars" />
         </Navbar.Toggle>
         <Navbar.Collapse id="navbarResponsive">
