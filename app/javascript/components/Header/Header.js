@@ -5,7 +5,7 @@ const Header = (props) => {
   const title = props.title
   const subtitle = props.subtitle
   return (
-    <header className="masthead">
+    <header className="masthead" style={{ backgroundImage: "url(/images/home-bg.jpg)" }} >
       <Container className="position-relative px-4 px-lg-5">
         <Row className="gx-4 gx-lg-5 justify-content-center">
           <Col className="col-md-10 col-lg-8 col-xl-7">
