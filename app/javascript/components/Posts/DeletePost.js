@@ -16,7 +16,7 @@ const DeletePost = (props) => {
 
   return (
     <>
-      <Link to={`/posts/edit/${props.id}`} className="px-1" onClick={postDelete}>
+      <Link to={`/posts/edit/${props.id}`} className="mx-2" onClick={postDelete}>
         <i className="fa-solid fa-trash-can"></i>
       </Link>
     </>

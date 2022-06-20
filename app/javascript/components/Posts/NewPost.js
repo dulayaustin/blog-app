@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PostForm from './PostForm'
 import axios from 'axios'
+import Header from '../Header'
 
 const NewPost = () => {
   const [post, setPost] = useState({
@@ -12,7 +13,6 @@ const NewPost = () => {
     e.preventDefault()
 
     setPost(Object.assign({}, post, {[e.target.name]: e.target.value}))
-    console.log('post:', post)
   }
 
   const handleSubmit = (e) => {
@@ -27,6 +27,10 @@ const NewPost = () => {
 
   return (
     <>
+      <Header
+        title="New Post"
+        subtitle=""
+      />
       <PostForm
         handleChange={handleChange}
         handleSubmit={handleSubmit}
