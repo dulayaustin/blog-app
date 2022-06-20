@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PostForm from './PostForm'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import Header from '../Header'
 
 const EditPost = () => {
   const [post, setPost] = useState({})
@@ -36,6 +37,10 @@ const EditPost = () => {
 
   return (
     <>
+      <Header
+        title="Edit Post"
+        subtitle=""
+      />
       {
         loaded &&
         <PostForm
