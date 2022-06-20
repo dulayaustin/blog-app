@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import DeletePost from './DeletePost'
 
 const PostItem = (props) => {
-  console.log(props.created_at_date)
   return (
     <>
       <div className="post-preview">
