@@ -1,3 +1,5 @@
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -32,6 +34,10 @@ gem 'pry-rails'
 gem 'searchkick'
 gem 'elasticsearch'
 gem 'order_as_specified'
+gem 'devise'
+gem 'devise-jwt'
+gem 'rack-cors'
+gem 'awesome_print'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
