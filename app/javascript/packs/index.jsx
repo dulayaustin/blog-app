@@ -3,18 +3,18 @@
 // of the page.
 
 import React from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+import { createRoot } from 'react-dom/client'
 import App from '../components/App'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
+  const container = document.getElementById('root')
+  const root = createRoot(container)
+  root.render(
     <Router>
       <Routes>
         <Route path="/*" element={<App/>} />
       </Routes>
-    </Router>,
-    document.getElementById('root')
+    </Router>
   )
 })
