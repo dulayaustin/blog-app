@@ -1,5 +1,5 @@
 
-const hasJWT = () => {
+const isLoggedIn = () => {
   let flag = false
 
   //check user has JWT token
@@ -8,4 +8,4 @@ const hasJWT = () => {
   return flag
 }
 
-export default hasJWT
+export default isLoggedIn
