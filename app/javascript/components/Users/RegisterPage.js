@@ -4,8 +4,10 @@ import { Container, Row, Form, Button } from 'react-bootstrap'
 import Header from '../Header'
 import { setAuthToken } from '../../helpers/setAuthToken'
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const [user, setUser] = useState({
+    first_name: '',
+    last_name: '',
     email: '',
     password: ''
   })
@@ -21,7 +23,7 @@ const LoginPage = () => {
 
     const userPayload = JSON.stringify({ user: user })
 
-    axios.post("/users/sign_in", userPayload, {
+    axios.post("/users", userPayload, {
       data: null,
       headers: {
         // Overwrite Axios's automatically set Content-Type
@@ -46,13 +48,35 @@ const LoginPage = () => {
   return (
     <>
       <Header
-        title="Login"
+        title="Sign Up"
       />
       <div className="mb-4">
         <Container className="px-4 px-lg-5">
           <Row className="gx-4 gx-lg-5 justify-content-center">
             <div className="col-md-10 col-lg-8 col-xl-7">
               <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3">
+                  <Form.Label>First name</Form.Label>
+                  <Form.Control
+                    name="first_name"
+                    type="text"
+                    placeholder="Enter first name"
+                    value={user.first_name}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                  <Form.Label>Last name</Form.Label>
+                  <Form.Control
+                    name="last_name"
+                    type="text"
+                    placeholder="Enter last name"
+                    value={user.last_name}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+
                 <Form.Group className="mb-3">
                   <Form.Label>Username</Form.Label>
                   <Form.Control
@@ -74,15 +98,9 @@ const LoginPage = () => {
                   />
                 </Form.Group>
 
-                <div className="d-flex justify-content-between">
-                  <Button variant="success" type="submit">
-                    Submit
-                  </Button>
-
-                  <Button variant="primary" href="/register">
-                    Create new account
-                  </Button>
-                </div>
+                <Button variant="success" type="submit">
+                  Submit
+                </Button>
 
               </Form>
             </div>
@@ -94,4 +112,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage
+export default RegisterPage
