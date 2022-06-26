@@ -1,3 +1,4 @@
+# Usage: Searchkick::Search.call(Post, {where: {status: 'draft'}, order: {status: :desc}, per_page: 3})
 class Searchkick::Search
 
   def self.call(relation, options)
