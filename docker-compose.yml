@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.8'
 volumes:
   bundle_cache:
 services:
@@ -6,7 +6,7 @@ services:
     image: postgres:14.3
     container_name: blog_app_postgres
     volumes:
-      - ./data/db/postgresql
+      - ./data/db/postgresql:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     environment:
@@ -14,10 +14,10 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
   mailcatcher:
     image: schickling/mailcatcher
+    container_name: blog_app_mailcatcher
     ports:
       - "1080:1080"
       - "1025:1025"
-    container_name: blog_app_mailcatcher
   redis:
     image: redis:7.0.2
     container_name: blog_app_redis
@@ -27,6 +27,7 @@ services:
       - "6379:6379"
   elasticsearch:
     image: elasticsearch:8.2.2
+    container_name: blog_app_elasticsearch
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
