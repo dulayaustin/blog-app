@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PostForm from './PostForm'
 import axios from 'axios'
 import Header from '../Header'
