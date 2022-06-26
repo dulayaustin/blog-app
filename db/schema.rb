@@ -15,16 +15,6 @@ ActiveRecord::Schema.define(version: 2022_06_20_163357) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "parent_id"
-    t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["parent_id"], name: "index_comments_on_parent_id"
-    t.index ["post_id"], name: "index_comments_on_post_id"
-  end
-
   create_table "jwt_denylist", force: :cascade do |t|
     t.string "jti", null: false
     t.datetime "exp", null: false
