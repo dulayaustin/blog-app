@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { Container, Navbar, Nav } from 'react-bootstrap'
+import LoginLogout from './LoginLogout'
 
 const Navigation = () => {
   return (
@@ -12,7 +13,10 @@ const Navigation = () => {
         <Navbar.Collapse id="navbarResponsive">
           <ul className="navbar-nav ms-auto py-4 py-lg-0">
             <li className="nav-item">
-            <Nav.Link className="px-lg-3 py-3 py-lg-4" href="/">Home</Nav.Link>
+              <Nav.Link className="px-lg-3 py-3 py-lg-4" href="/">Home</Nav.Link>
+            </li>
+            <li className="nav-item">
+              <LoginLogout />
             </li>
           </ul>
         </Navbar.Collapse>

@@ -4,14 +4,17 @@
 
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import App from '../components/App'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { history } from '../helpers/history'
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('root')
   const root = createRoot(container)
   root.render(
-    <Router>
+    <Router history={ history }>
       <Routes>
         <Route path="/*" element={<App/>} />
       </Routes>
