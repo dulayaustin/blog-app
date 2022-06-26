@@ -1,11 +1,11 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
-import hasJWT from '../helpers/hasJWT'
+import isLoggedIn from '../helpers/isLoggedIn'
 
 const RouteGuard = ({ component: Component, ...rest }) => {
 
   return (
-    hasJWT ? <Component {...rest} /> : <Navigate to="/login" />
+    isLoggedIn() ? <Component {...rest} /> : <Navigate to="/login" />
   )
 }
 

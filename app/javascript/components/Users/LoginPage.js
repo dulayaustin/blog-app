@@ -48,37 +48,39 @@ const LoginPage = () => {
       <Header
         title="Login"
       />
-      <Container className="px-4 px-lg-5">
-        <Row className="gx-4 gx-lg-5 justify-content-center">
-          <div className="col-md-10 col-lg-8 col-xl-7">
-            <Form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3">
-                <Form.Label>Username</Form.Label>
-                <Form.Control
-                  name="email"
-                  type="text"
-                  placeholder="Enter username"
-                  value={user.email}
-                  onChange={handleChange}
-                />
-              </Form.Group>
+      <div className="mb-4">
+        <Container className="px-4 px-lg-5">
+          <Row className="gx-4 gx-lg-5 justify-content-center">
+            <div className="col-md-10 col-lg-8 col-xl-7">
+              <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-3">
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control
+                    name="email"
+                    type="text"
+                    placeholder="Enter username"
+                    value={user.email}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
 
-              <Form.Group className="mb-3">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  name="password"
-                  type="password"
-                  value={user.password}
-                  onChange={handleChange}
-                />
-              </Form.Group>
-              <Button variant="success" type="submit">
-                Submit
-              </Button>
-            </Form>
-          </div>
-        </Row>
-      </Container>
+                <Form.Group className="mb-3">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    name="password"
+                    type="password"
+                    value={user.password}
+                    onChange={handleChange}
+                  />
+                </Form.Group>
+                <Button variant="success" type="submit">
+                  Submit
+                </Button>
+              </Form>
+            </div>
+          </Row>
+        </Container>
+      </div>
     </>
 
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap'
-import LoginLogout from './LoginLogout'
+import LoginLogoutLinks from './LoginLogoutLinks'
 
 const Navigation = () => {
   return (
@@ -16,7 +16,7 @@ const Navigation = () => {
               <Nav.Link className="px-lg-3 py-3 py-lg-4" href="/">Home</Nav.Link>
             </li>
             <li className="nav-item">
-              <LoginLogout />
+              <LoginLogoutLinks />
             </li>
           </ul>
         </Navbar.Collapse>

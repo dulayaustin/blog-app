@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import PostItem from './PostItem'
-import { Container, Row, Button } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import Header from '../Header'
+import NewPostButton from './NewPostButton'
 
 const PostList = () => {
   const [posts, setPosts] = useState([])
@@ -36,12 +37,7 @@ const PostList = () => {
         subtitle="A simple blog app created on Rails API + React"
       />
       <Container className="px-4 px-lg-5">
-        <div className="text-end">
-          <Button href="posts/new" variant="secondary">
-            <i className="fa fa-plus me-1"></i>
-            Post
-          </Button>
-        </div>
+        <NewPostButton />
       </Container>
       <Container className="px-4 px-lg-5">
         {grid}

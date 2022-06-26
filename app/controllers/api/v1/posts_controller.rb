@@ -15,7 +15,7 @@ class Api::V1::PostsController < ApplicationController
     post = Post.new(post_params)
 
     if post.save
-      render json: serialize(post)
+      render json: serialize(post), status: :created
     else
       render json: post.errors, status: :unprocessable_entity
     end
