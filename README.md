@@ -13,7 +13,7 @@ It is a simple blog app that was created on Ruby on Rails as the API backend and
 
 Clone the repository:
 ```sh
-https://github.com/dulayaustin/blog-app.git
+git clone https://github.com/dulayaustin/blog-app.git
 ```
 
 Bundle gems using gemset to be organized: (Optional) OR `bundle install` immediately.
@@ -40,7 +40,7 @@ docker-compose up
 
 Seed data:
 ```sh
-rake db:seed
+rake db:seed   # Wait for docker compose to pull images and setup the containers first
 ```
 
 Hit me up on my email dulayaustin@gmail.com for `master.key`
