@@ -43,7 +43,7 @@ Seed data:
 rake db:seed   # Wait for docker compose to pull images and setup the containers first
 ```
 
-Hit me up on my email dulayaustin@gmail.com for `master.key`
+Hit me up on my email dulayaustin@gmail.com for `master.key`. Paste the file on `/config/` directory.
 
 Start the app:
 ```sh
