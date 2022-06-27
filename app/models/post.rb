@@ -1,13 +1,9 @@
 class Post < ApplicationRecord
   extend OrderAsSpecified
 
-  belongs_to :user
+  enum status: %i[draft published archived], _prefix: true
 
-  enum status: {
-    draft: 0,
-    published: 1,
-    archived: 2
-  }, _prefix: true
+  belongs_to :user
 
   validates :title, presence: true
   validates :published_at, presence: true, if: -> { self.status_published? }
