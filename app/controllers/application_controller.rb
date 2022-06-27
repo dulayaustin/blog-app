@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  before_action :underscore_params!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def serialize(resource)
@@ -14,5 +15,11 @@ class ApplicationController < ActionController::API
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password)}
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name, :last_name, :password, :current_password)}
+  end
+
+  private
+
+  def underscore_params!
+    params.deep_transform_keys!(&:underscore)
   end
 end

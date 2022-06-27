@@ -6,8 +6,8 @@ import { setAuthToken } from '../../helpers/setAuthToken'
 
 const RegisterPage = () => {
   const [user, setUser] = useState({
-    first_name: '',
-    last_name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: ''
   })
@@ -58,10 +58,10 @@ const RegisterPage = () => {
                 <Form.Group className="mb-3">
                   <Form.Label>First name</Form.Label>
                   <Form.Control
-                    name="first_name"
+                    name="firstName"
                     type="text"
                     placeholder="Enter first name"
-                    value={user.first_name}
+                    value={user.firstName}
                     onChange={handleChange}
                   />
                 </Form.Group>
@@ -69,10 +69,10 @@ const RegisterPage = () => {
                 <Form.Group className="mb-3">
                   <Form.Label>Last name</Form.Label>
                   <Form.Control
-                    name="last_name"
+                    name="lastName"
                     type="text"
                     placeholder="Enter last name"
-                    value={user.last_name}
+                    value={user.lastName}
                     onChange={handleChange}
                   />
                 </Form.Group>
