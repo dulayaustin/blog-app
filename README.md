@@ -31,14 +31,19 @@ Database creation and seed data:
 ```sh
 rake db:create
 rake db:migrate
-rake db:seed
 ```
 
 Start up the containers for services such as Elasticsearch, PostgreSQL, etc using docker:
-
 ```sh
 docker-compose up
 ```
+
+Seed data:
+```sh
+rake db:seed
+```
+
+Hit me up on my email dulayaustin@gmail.com for `master.key`
 
 Start the app:
 ```sh
