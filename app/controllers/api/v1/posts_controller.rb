@@ -4,15 +4,15 @@ class Api::V1::PostsController < ApplicationController
   def index
     posts = Post.all
 
-    render json: serialize(posts)
+    render json: serialize(posts, PostSerializer.options)
   end
 
   def show
-    render json: serialize(post)
+    render json: serialize(post, PostSerializer.options)
   end
 
   def create
-    post = Post.new(post_params)
+    post = current_user.posts.new(post_params)
 
     if post.save
       render json: serialize(post), status: :created

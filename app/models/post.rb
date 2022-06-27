@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   extend OrderAsSpecified
 
+  belongs_to :user
+
   enum status: {
     draft: 0,
     published: 1,
