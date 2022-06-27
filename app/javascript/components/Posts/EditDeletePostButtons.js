@@ -4,8 +4,6 @@ import isLoggedIn from '../../helpers/isLoggedIn'
 import DeletePost from './DeletePost'
 
 const EditDeletePostButtons = (props) => {
-  console.log(props)
-  console.log(props.id)
   return (
     <>
       { isLoggedIn() &&
