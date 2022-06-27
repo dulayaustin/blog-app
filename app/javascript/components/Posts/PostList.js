@@ -7,23 +7,26 @@ import NewPostButton from './NewPostButton'
 
 const PostList = () => {
   const [posts, setPosts] = useState([])
+  const [postResponse, setPostResponse] = useState({})
 
   useEffect(() => {
     axios.get("/api/v1/posts")
-    .then( resp => setPosts(resp.data.data) )
+    .then( resp => {
+      setPosts(resp.data.data)
+      setPostResponse(resp.data)
+    })
     .catch( resp => console.log(resp) )
   }, [])
 
   const grid = posts.map( post => {
-    // TODO change this to post.published_at
-    const createdAtDate = new Date(post.attributes.created_at)
+    // console.log(post.relationships.user.data)
+    // console.log(postResponse.included)
     return (
       <Row key={post.id} className="gx-4 gx-lg-5 justify-content-center">
         <div className="col-md-10 col-lg-8 col-xl-7">
           <PostItem
             id={post.id}
             attributes={post.attributes}
-            created_at_date={createdAtDate}
           />
         </div>
       </Row>

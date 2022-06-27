@@ -6,7 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Post.create(
+user = User.create(
+  first_name: "Jack",
+  last_name: "Sparrow",
+  email: "jack_sparrow@example.com",
+  password: "password"
+)
+
+user.posts.create(
   [
     {
       title: "Your Step-by-Step Guide to Choosing Where to Get Care",
@@ -24,5 +31,4 @@ Post.create(
       status: 2,
     }
   ]
-
 )
