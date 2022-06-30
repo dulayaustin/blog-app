@@ -33,13 +33,6 @@
       {
         "extensions": [".js", ".jsx"]
       }
-    ],
-    "quotes": [
-      "warn",
-      "single",
-      {
-        "avoidEscape": true
-      }
     ]
   }
 }
