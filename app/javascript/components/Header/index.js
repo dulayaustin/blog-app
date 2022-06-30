@@ -1,11 +1,12 @@
-import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
-const Header = (props) => {
-  const title = props.title
-  const subtitle = props.subtitle
+function Header({ title, subtitle }) {
   return (
-    <header className="masthead" style={{ backgroundImage: "url(/images/home-bg.jpg)" }} >
+    <header
+      className="masthead"
+      style={{ backgroundImage: 'url(/images/home-bg.jpg)' }}
+    >
       <Container className="position-relative px-4 px-lg-5">
         <Row className="gx-4 gx-lg-5 justify-content-center">
           <Col className="col-md-10 col-lg-8 col-xl-7">
@@ -18,6 +19,15 @@ const Header = (props) => {
       </Container>
     </header>
   )
+}
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  subtitle: '',
 }
 
 export default Header

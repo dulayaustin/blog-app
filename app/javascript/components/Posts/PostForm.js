@@ -1,22 +1,21 @@
-import React from 'react'
 import { Container, Row, Form, Button } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
-const PostForm = (props) => {
-
+function PostForm({ title, content, handleChange, handleSubmit }) {
   return (
     <div className="mb-4">
       <Container className="px-4 px-lg-5">
         <Row className="gx-4 gx-lg-5 justify-content-center">
           <div className="col-md-10 col-lg-8 col-xl-7">
-            <Form onSubmit={props.handleSubmit}>
+            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3">
                 <Form.Label>Title</Form.Label>
                 <Form.Control
                   name="title"
                   type="text"
                   placeholder="Enter title"
-                  value={props.post.title}
-                  onChange={props.handleChange}
+                  value={title}
+                  onChange={handleChange}
                 />
               </Form.Group>
 
@@ -26,8 +25,8 @@ const PostForm = (props) => {
                   name="content"
                   as="textarea"
                   rows="10"
-                  value={props.post.content}
-                  onChange={props.handleChange}
+                  value={content}
+                  onChange={handleChange}
                 />
               </Form.Group>
               <Button variant="success" type="submit">
@@ -36,10 +35,16 @@ const PostForm = (props) => {
             </Form>
           </div>
         </Row>
-
       </Container>
     </div>
   )
+}
+
+PostForm.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 }
 
 export default PostForm

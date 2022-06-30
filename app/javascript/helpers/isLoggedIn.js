@@ -1,9 +1,12 @@
-
 const isLoggedIn = () => {
   let flag = false
 
-  //check user has JWT token
-  localStorage.getItem("token") ? flag=true : flag=false
+  // check user has JWT token
+  if (localStorage.getItem('token')) {
+    flag = true
+  } else {
+    flag = false
+  }
 
   return flag
 }
