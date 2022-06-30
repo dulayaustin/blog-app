@@ -1,37 +1,33 @@
-import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { FaTwitter, FaFacebook, FaGithub } from 'react-icons/fa'
 
-const Footer = () => {
+function Footer() {
   return (
     <footer className="border-top">
       <Container className="px-4 px-lg-5">
         <Row className="gx-4 gx-lg-5 justify-content-center">
-          <div className="col-md-10 col-lg-8 col-xl-7">
+          <Col className="col-md-10 col-lg-8 col-xl-7">
             <ul className="list-inline text-center">
               <li className="list-inline-item">
                 <a href="#!">
-                  <span className="fa-stack fa-lg">
-                    <i className="fa-brands fa-twitter fa-stack-2x"></i>
-                  </span>
+                  <FaTwitter size={50} />
                 </a>
               </li>
               <li className="list-inline-item">
                 <a href="#!">
-                  <span className="fa-stack fa-lg">
-                    <i className="fa-brands fa-facebook fa-stack-2x"></i>
-                  </span>
+                  <FaFacebook size={50} />
                 </a>
               </li>
               <li className="list-inline-item">
                 <a href="#!">
-                  <span className="fa-stack fa-lg">
-                    <i className="fa-brands fa-github fa-stack-2x"></i>
-                  </span>
+                  <FaGithub size={50} />
                 </a>
               </li>
             </ul>
-            <div className="small text-center text-muted fst-italic">Copyright © Blogeek 2022</div>
-          </div>
+            <div className="small text-center text-muted fst-italic">
+              Copyright © Blogeek 2022
+            </div>
+          </Col>
         </Row>
       </Container>
     </footer>

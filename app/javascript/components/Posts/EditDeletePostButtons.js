@@ -1,23 +1,26 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { FaPencilAlt } from 'react-icons/fa'
 import isLoggedIn from '../../helpers/isLoggedIn'
 import DeletePost from './DeletePost'
 
-const EditDeletePostButtons = (props) => {
+function EditDeletePostButtons({ id }) {
   return (
     <>
-      { isLoggedIn() &&
+      {isLoggedIn() && (
         <div className="text-end">
-          <Link to={`/posts/edit/${props.post.data.id}`} className="mx-2">
-            <i className="fa-solid fa-pencil"></i>
+          <Link to={`/posts/edit/${id}`} className="mx-2">
+            <FaPencilAlt />
           </Link>
-          <DeletePost
-            id={props.post.data.id}
-          />
+          <DeletePost id={id} />
         </div>
-      }
+      )}
     </>
   )
+}
+
+EditDeletePostButtons.propTypes = {
+  id: PropTypes.string.isRequired,
 }
 
 export default EditDeletePostButtons

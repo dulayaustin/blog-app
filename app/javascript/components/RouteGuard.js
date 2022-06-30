@@ -1,12 +1,13 @@
-import React from 'react'
 import { Navigate } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import isLoggedIn from '../helpers/isLoggedIn'
 
-const RouteGuard = ({ component: Component, ...rest }) => {
+function RouteGuard({ component: Component, ...rest }) {
+  return isLoggedIn() ? <Component {...rest} /> : <Navigate to="/login" />
+}
 
-  return (
-    isLoggedIn() ? <Component {...rest} /> : <Navigate to="/login" />
-  )
+RouteGuard.propTypes = {
+  component: PropTypes.elementType.isRequired,
 }
 
 export default RouteGuard

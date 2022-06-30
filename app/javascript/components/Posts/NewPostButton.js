@@ -1,19 +1,18 @@
-import React from 'react'
 import { Button } from 'react-bootstrap'
+import { FaPlus } from 'react-icons/fa'
 import isLoggedIn from '../../helpers/isLoggedIn'
 
-const NewPostButton = () => {
-
+function NewPostButton() {
   return (
     <>
-      { isLoggedIn() &&
+      {isLoggedIn() && (
         <div className="text-end">
           <Button href="posts/new" variant="secondary">
-            <i className="fa fa-plus me-1"></i>
+            <FaPlus className="me-1" />
             Post
           </Button>
         </div>
-      }
+      )}
     </>
   )
 }
