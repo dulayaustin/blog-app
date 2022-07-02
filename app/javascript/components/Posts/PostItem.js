@@ -2,7 +2,7 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-function PostItem({ id, title, createdAt }) {
+function PostItem({ id, title, createdAt, authorFirstName, authorLastName }) {
   // TODO change this to props.attributes.publishedAt
   const postCreatedAt = new Date(createdAt)
   return (
@@ -15,7 +15,7 @@ function PostItem({ id, title, createdAt }) {
           </Link>
           <p className="post-meta">
             <span className="px-1">Posted by</span>
-            <a href="#!">{`Author ${id}`}</a>
+            <a href="#!">{`${authorFirstName} ${authorLastName}`}</a>
             <span className="px-1">{`on ${postCreatedAt}`}</span>
           </p>
         </div>
@@ -29,6 +29,8 @@ PostItem.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
+  authorFirstName: PropTypes.string.isRequired,
+  authorLastName: PropTypes.string.isRequired,
 }
 
 export default PostItem
