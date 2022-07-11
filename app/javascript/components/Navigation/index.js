@@ -1,12 +1,15 @@
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import { FaBars } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import LoginLogoutLinks from './LoginLogoutLinks'
 
 function Navigation() {
   return (
     <Navbar expand="lg" id="mainNav">
       <Container className="px-4 px-lg-5">
-        <Navbar.Brand href="/">Blogeek</Navbar.Brand>
+        <Link className="navbar-brand" to="/">
+          Blogeek
+        </Link>
         <Navbar.Toggle
           type="button"
           data-bs-toggle="collapse"
