@@ -31,7 +31,11 @@ function Post() {
               <EditDeletePostButtons id={post.data.id} />
               <Row className="gx-4 gx-lg-5 justify-content-center">
                 <div className="col-md-10 col-lg-8 col-xl-7">
-                  <p>{post.data.attributes.content}</p>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: post.data.attributes.content,
+                    }}
+                  />
                 </div>
               </Row>
             </Container>

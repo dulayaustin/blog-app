@@ -1,7 +1,14 @@
 import { Container, Row, Form, Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
+import { ReactTrixRTEInput } from 'react-trix-rte'
 
-function PostForm({ register, handleSubmit, onSubmit, errors }) {
+function PostForm({
+  register,
+  handleSubmit,
+  onSubmit,
+  errors,
+  contentDefaultValue,
+}) {
   return (
     <div className="mb-4">
       <Container className="px-4 px-lg-5">
@@ -28,10 +35,10 @@ function PostForm({ register, handleSubmit, onSubmit, errors }) {
 
               <div className="mb-3">
                 <label className="form-label">Content</label>
-                <textarea
+                <ReactTrixRTEInput
                   className="form-control"
+                  defaultValue={contentDefaultValue}
                   {...register('content')}
-                  rows="10"
                 />
               </div>
               <Button variant="success" type="submit">
@@ -46,10 +53,15 @@ function PostForm({ register, handleSubmit, onSubmit, errors }) {
 }
 
 PostForm.propTypes = {
-  register: PropTypes.objectOf(PropTypes.object()).isRequired,
+  register: PropTypes.objectOf(PropTypes.shape).isRequired,
   handleSubmit: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
-  errors: PropTypes.objectOf(PropTypes.object()).isRequired,
+  errors: PropTypes.objectOf(PropTypes.shape).isRequired,
+  contentDefaultValue: PropTypes.string,
+}
+
+PostForm.defaultProps = {
+  contentDefaultValue: '',
 }
 
 export default PostForm

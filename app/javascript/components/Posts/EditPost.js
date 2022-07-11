@@ -47,10 +47,8 @@ function EditPost() {
       })
       .catch((resp) => console.log(resp))
   }
-
   setValue('title', post.title)
   setValue('content', post.content)
-
   return (
     <>
       <Header title="Edit Post" subtitle="" />
@@ -60,6 +58,7 @@ function EditPost() {
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
           errors={errors}
+          contentDefaultValue={post.content}
         />
       )}
     </>

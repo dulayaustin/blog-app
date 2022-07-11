@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   extend OrderAsSpecified
 
+  has_rich_text :content
+
   enum status: %i[draft published archived], _prefix: true
 
   belongs_to :user
