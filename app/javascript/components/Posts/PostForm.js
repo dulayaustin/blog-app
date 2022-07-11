@@ -9,12 +9,6 @@ function PostForm({
   errors,
   contentDefaultValue,
 }) {
-  // const modifiedRegister = { ...register('content') }
-  // const trixInputRef = { trixInputRef: modifiedRegister['ref'] }
-  // delete modifiedRegister['ref']
-
-  // console.log({ ...modifiedRegister })
-  // console.log({ ...trixInputRef })
   return (
     <div className="mb-4">
       <Container className="px-4 px-lg-5">

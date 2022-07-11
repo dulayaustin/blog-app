@@ -13,9 +13,3 @@ ActiveStorage.start()
 
 require('trix')
 require('@rails/actiontext')
-// try {
-//   require('trix')
-//   require('@rails/actiontext')
-// } catch (err) {
-//   console.log(err)
-// }
