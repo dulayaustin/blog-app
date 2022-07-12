@@ -5,7 +5,9 @@ function Header({ title, subtitle }) {
   return (
     <header
       className="masthead"
-      style={{ backgroundImage: 'url(/images/home-bg.jpg)' }}
+      style={{
+        backgroundImage: `url("https://austin-dulay-blog.herokuapp.com/images/home-bg.jpg")`,
+      }}
     >
       <Container className="position-relative px-4 px-lg-5">
         <Row className="gx-4 gx-lg-5 justify-content-center">
