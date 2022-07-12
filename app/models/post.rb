@@ -12,16 +12,6 @@ class Post < ApplicationRecord
 
   before_validation :update_published_at
 
-  searchkick searchable: %i[],
-    filterable: %i[status]
-
-  def search_data
-    {
-      title: title,
-      status: status
-    }
-  end
-
   private
 
   def update_published_at
