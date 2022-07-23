@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :post do
-    title { 'A valid title' }
-    content { 'A valid content' }
-    status { 0 }
+    title { Faker::Lorem.sentence }
+    content { Faker::Lorem.paragraph }
   end
 end
