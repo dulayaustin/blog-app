@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let(:blog_post) { build(:post) }
+  let(:user) { create(:user) }
+  let(:blog_post) { build(:post, user: user) }
 
   context 'validations' do
     it 'must have a title' do
@@ -15,7 +16,7 @@ RSpec.describe Post, type: :model do
     end
 
     context 'when status is published' do
-      let(:blog_post) { build(:post, status: 1, published_at: Time.now.utc) }
+      let(:blog_post) { build(:post, status: 1, published_at: Time.now.utc, user: user) }
 
       it 'must have a published_at' do
         expect(blog_post).to be_valid
