@@ -16,9 +16,10 @@ RSpec.describe Post, type: :model do
     end
 
     context 'when status is published' do
-      let(:blog_post) { build(:post, status: 1, published_at: Time.now.utc, user: user) }
-
       it 'must have a published_at' do
+        blog_post.status = 1
+        blog_post.published_at = Time.now.utc
+
         expect(blog_post).to be_valid
       end
     end
