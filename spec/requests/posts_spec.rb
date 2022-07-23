@@ -5,19 +5,10 @@ RSpec.describe 'Api::V1::Posts', type: :request do
   include_context "api request authentication helper methods"
   include_context "api request global before and after hooks"
 
-  let(:user) { create(:user) }
-
-  let(:email) { 'test_user1@example.com' }
-  let(:password) { 'password' }
-
-  let!(:current_user) { create(:user, email: email, password: password) }
-
+  let(:current_user) { create(:user) }
+  let!(:posts) { create_list(:post, 3, user: current_user) }
 
   context 'GET /api/v1/posts' do
-    before(:each) do
-      create_list(:post, 3, user: user)
-    end
-
     it 'returns all posts' do
       get api_v1_posts_path
 
@@ -39,13 +30,12 @@ RSpec.describe 'Api::V1::Posts', type: :request do
   end
 
   context 'DELETE /api/v1/posts/:id' do
-    let!(:blog_post) { create(:post, user: user) }
 
     it 'delete a post' do
       sign_in(current_user)
 
       expect {
-        delete "/api/v1/posts/#{blog_post.id}"
+        delete "/api/v1/posts/#{Post.last.id}"
       }.to change { Post.count }.by(-1)
 
 
